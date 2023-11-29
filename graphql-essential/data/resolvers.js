@@ -33,6 +33,14 @@ const resolvers = {
       return error;
     }
   },
+  deleteProduct: async ({ id }) => {
+    try {
+      await Widgets.deleteOne({ _id: id });
+      return `Successfully delete widet ${id}`;
+    } catch (error) {
+      return error;
+    }
+  },
 
   getProduct: async ({ id }) => {
     try {
@@ -41,9 +49,9 @@ const resolvers = {
       return error;
     }
   },
-  getProducts: async () => {
+  getAllProducts: async () => {
     try {
-      return await Widgets.findAll();
+      return await Widgets.find({});
     } catch (error) {
       return error;
     }

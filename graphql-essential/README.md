@@ -223,3 +223,64 @@ mutation {
   }
 }
 ```
+
+- deleteProductById
+
+```
+mutation {
+  deleteProduct(id: "6567bf234f796f5f89182a2d")
+}
+```
+
+- getAllProducts
+
+```
+query {
+  getAllProducts {
+    id,
+    name,
+    description,
+    price,
+    soldout,
+    inventory,
+    stores {
+      store
+    }
+  }
+}
+```
+
+- Create Alias in Response:
+
+```
+query {
+  price: getProduct(id: "6567bbad8c3501ea8414f0d3") {
+    name,
+    price
+  },
+  description:  getProduct(id: "6567bbb98c3501ea8414f0d5") {
+    name,
+    description
+  }
+}
+```
+
+- Create Queries using Fragments
+
+```
+query {
+  widget1: getProduct(id: "6567bbad8c3501ea8414f0d3") {
+   ...widgetFragment
+  },
+  widget2:  getProduct(id: "6567bbb98c3501ea8414f0d5") {
+    ...widgetFragment
+  }
+}
+
+fragment widgetFragment on Product {
+  name,
+  price,
+  description,
+  soldout
+}
+```
