@@ -3,7 +3,7 @@ import { graphqlHTTP } from "express-graphql";
 // Type Definition - Query, Type, Mutation, input
 import schema from "./schema";
 // Resolvers - Functions that returns data
-import resolvers from "./resolvers";
+import resolvers from "./data/resolvers";
 
 const app = express();
 

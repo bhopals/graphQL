@@ -177,4 +177,13 @@ GraphQL is a query language for APIs and a runtime for fulfilling those queries 
   - Boolean
 
 - Enumeration Types (Enum)
+
   - Special scalar types that allows you to define a specific set of data
+
+- List Types (Using Custom Types - Ex. Product)
+
+### Setting up Persistance
+
+- Install MongoDB - https://www.mongodb.com/docs/manual/tutorial/install-mongodb-on-os-x/
+  - Start Mongo DB Command - `brew services start mongodb-community@7.0`
+  - Stop Mongo DB Command - `brew services stop mongodb-community@7.0`
