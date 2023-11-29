@@ -1,4 +1,7 @@
 import mongoose from "mongoose";
+import { Sequelize, DataTypes } from "sequelize";
+import _ from "lodash";
+import casual from "casual"; // To Create Fake Data
 
 // Mongo Connection
 mongoose.Promise = global.Promise;
@@ -32,4 +35,21 @@ const widgetSchema = mongoose.Schema({
 
 const Widgets = mongoose.model("widgets", widgetSchema);
 
-export { Widgets };
+// SQLite
+const sequelize = new Sequelize("sqlite::memory");
+const Categories = sequelize.define("categories", {
+  category: DataTypes.STRING,
+  description: DataTypes.STRING,
+});
+Categories.sync({
+  force: true,
+}).then(() => {
+  _.times(5, (i) =>
+    Categories.create({
+      category: casual.word,
+      description: casual.sentence,
+    })
+  );
+});
+
+export { Widgets, Categories };
