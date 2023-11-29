@@ -1,12 +1,12 @@
 class Product {
-  constructor(id, name, description, price, soldout, inventory, stores) {
+  constructor(id, props) {
     this.id = id;
-    this.name = name;
-    this.description = description;
-    this.price = price;
-    this.soldout = soldout;
-    this.inventory = inventory;
-    this.stores = stores;
+    this.name = props.name;
+    this.description = props.description;
+    this.price = props.price;
+    this.soldout = props.soldout;
+    this.inventory = props.inventory;
+    this.stores = props.stores;
   }
 }
 
@@ -19,7 +19,6 @@ const resolvers = {
     console.log("id>", id);
     console.log("input>", input);
     console.log("productDataBase>", productDataBase);
-
     return new Product(id, input);
   },
   getProduct: ({ id }) => {
