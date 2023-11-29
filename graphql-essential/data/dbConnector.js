@@ -5,7 +5,7 @@ import casual from "casual"; // To Create Fake Data
 
 // Mongo Connection
 mongoose.Promise = global.Promise;
-mongoose.connect("mongodb://localhost:widgets", {
+mongoose.connect("mongodb://localhost/widgets", {
   useNewUrlParser: true,
 });
 

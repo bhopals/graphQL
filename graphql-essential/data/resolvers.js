@@ -1,26 +1,36 @@
 import { Widgets } from "./dbConnector";
 
 const resolvers = {
-  createProduct: ({ input }) => {
-    let id = require("crypto").randomBytes(10).toString("hex");
-    productDataBase[id] = input;
-    return new Product(id, input);
-  },
-  getProduct: ({ id }) => {
-    return new Promise((resolve) => {
-      Widgets.findById({ _id: id }).then((err, products) => {
-        if (err) reject(err);
-        else resolve(products);
-      });
+  createProduct: async ({ input }) => {
+    const newWidget = new Widgets({
+      name: input.name,
+      description: input.description,
+      price: input.price,
+      soldout: input.soldout,
+      inventory: input.inventory,
+      stores: input.stores,
     });
+    newWidget.id = newWidget._id;
+    try {
+      await newWidget.save();
+      return newWidget;
+    } catch (error) {
+      return err;
+    }
   },
-  getProducts: () => {
-    return new Promise((resolve) => {
-      Widgets.findAll().then((err, products) => {
-        if (err) reject(err);
-        else resolve(products);
-      });
-    });
+  getProduct: async ({ id }) => {
+    try {
+      return await Widgets.findById({ _id: id });
+    } catch (error) {
+      return error;
+    }
+  },
+  getProducts: async () => {
+    try {
+      return await Widgets.findAll();
+    } catch (error) {
+      return error;
+    }
   },
 };
 

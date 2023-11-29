@@ -1,7 +1,7 @@
 import express from "express";
 import { graphqlHTTP } from "express-graphql";
 // Type Definition - Query, Type, Mutation, input
-import schema from "./schema";
+import schema from "./data/schema";
 // Resolvers - Functions that returns data
 import resolvers from "./data/resolvers";
 
