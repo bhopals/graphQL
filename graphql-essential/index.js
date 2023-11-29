@@ -1,6 +1,9 @@
 import express from "express";
 import { graphqlHTTP } from "express-graphql";
+// Type Definition - Query, Type, Mutation, input
 import schema from "./schema";
+// Resolvers - Functions that returns data
+import resolvers from "./resolvers";
 
 const app = express();
 
@@ -8,17 +11,7 @@ app.get("/", (req, res) => {
   res.send("GraphQL is amazing");
 });
 
-const root = {
-  product: () => {
-    return {
-      id: "121212",
-      name: "widget",
-      description: "Beautiful Widget to render",
-      price: 150.32,
-      soldout: false,
-    };
-  },
-};
+const root = resolvers;
 app.use(
   "/graphql",
   graphqlHTTP({
