@@ -1,2 +1,14 @@
-# graphQL
-Graph QL 
+#### graphQL
+
+Graph QL Query and Mutation
+
+##### Tech Stack
+
+- express
+- express graphql
+- nodemon
+- casual
+- lodash
+- mongoose
+- sequelize
+- sqlite3

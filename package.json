@@ -1,9 +1,0 @@
-{
-  "dependencies": {
-    "casual": "^1.6.2",
-    "lodash": "^4.17.21",
-    "mongoose": "^8.0.2",
-    "sequelize": "^6.35.1",
-    "sqlite3": "^5.1.6"
-  }
-}
