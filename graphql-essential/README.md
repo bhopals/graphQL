@@ -78,7 +78,7 @@ GraphQL is a query language for APIs and a runtime for fulfilling those queries 
   - Query Example:
     `query {
     product {
-        name,
+        name
         price
     }
 }`
