@@ -18,6 +18,22 @@ const resolvers = {
       return err;
     }
   },
+
+  updateProduct: async ({ input }) => {
+    try {
+      const response = await Widgets.findOneAndUpdate(
+        { _id: input.id },
+        input,
+        {
+          new: true,
+        }
+      );
+      return response;
+    } catch (error) {
+      return error;
+    }
+  },
+
   getProduct: async ({ id }) => {
     try {
       return await Widgets.findById({ _id: id });

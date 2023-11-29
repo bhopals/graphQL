@@ -188,3 +188,38 @@ GraphQL is a query language for APIs and a runtime for fulfilling those queries 
   - Start Mongo DB Command - `brew services start mongodb-community@7.0`
   - Stop Mongo DB Command - `brew services stop mongodb-community@7.0`
 - Install Mongo Dependencies - `npm i mongoose sequelize sqlite3 casual lodash`
+
+#### Example Queries/Mutation
+
+- getProductByID
+
+```
+query {
+  getProduct(id: "6567bbd88c3501ea8414f0d9") {
+    id,
+    name,
+    description,
+    price
+  }
+}
+```
+
+- createProduct
+
+```
+mutation {
+  createProduct(input: {
+    name: "widgetw34323",
+    description: "Test Desc3333",
+    price: 34.55,
+    soldout: SOLDOUT,
+    inventory: 3,
+    stores: [{store: "Welland"}, {store: "New york"}]
+  }) {
+    id,
+    name,
+    description,
+    inventory
+  }
+}
+```

@@ -15,10 +15,6 @@ const schema = buildSchema(`
         store: String
     }
 
-    type Query {
-        getProduct(id: ID): Product
-    }
-
     enum Soldout {
         SOLDOUT
         ONSALE
@@ -29,6 +25,7 @@ const schema = buildSchema(`
     }
 
     input ProductInput {
+        id: ID,
         name: String,
         description: String,
         price: Float,
@@ -37,8 +34,13 @@ const schema = buildSchema(`
         stores: [StoreInput]!
     }
 
+    type Query {
+        getProduct(id: ID): Product
+    }
+
     type Mutation {
         createProduct(input: ProductInput): Product
+        updateProduct(input: ProductInput): Product
     }
 `);
 
