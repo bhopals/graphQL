@@ -187,3 +187,4 @@ GraphQL is a query language for APIs and a runtime for fulfilling those queries 
 - Install MongoDB - https://www.mongodb.com/docs/manual/tutorial/install-mongodb-on-os-x/
   - Start Mongo DB Command - `brew services start mongodb-community@7.0`
   - Stop Mongo DB Command - `brew services stop mongodb-community@7.0`
+- Install Mongo Dependencies - `npm i mongoose sequelize sqlite3 casual lodash`
