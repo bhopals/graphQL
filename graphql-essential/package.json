@@ -4,7 +4,7 @@
   "description": "Install VS Code Extension - GraphQL (From GraphQL Foundation)",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "nodemon ./index.js --exec babel-node -e js"
   },
   "author": "",
   "license": "ISC",
@@ -13,8 +13,8 @@
     "@babel/core": "^7.23.5",
     "@babel/node": "^7.22.19",
     "@babel/preset-env": "^7.23.5",
+    "express": "^4.18.2",
     "express-graphql": "^0.12.0",
-    "expresss": "^0.0.0",
     "graphql": "^15.8.0",
     "nodemon": "^3.0.1",
     "save-dev": "^0.0.1-security"
