@@ -42,6 +42,13 @@ GraphQL is a query language for APIs and a runtime for fulfilling those queries 
   - Server side caching
   - Protection against Complex Queries (if timeout and query depth protection is not in place)
 
+### GraphQL Operation
+
+- Query - GET Data
+- Mutation - CHANGE(ADD/UPDATE) Data
+- Subscription - To subscribe (pub-sub)
+  - It works over WEB SOCKET. It sets up a LISTENER
+
 ### Setup
 
 - Install VS Code Extension - GraphQL (From GraphQL Foundation)
@@ -189,6 +196,12 @@ GraphQL is a query language for APIs and a runtime for fulfilling those queries 
   - Stop Mongo DB Command - `brew services stop mongodb-community@7.0`
 - Install Mongo Dependencies - `npm i mongoose sequelize sqlite3 casual lodash`
 
+##### GraphQL Subscription
+
+- GraphQL another operation called `subscription`
+- Subscription - To subscribe (pub-sub)
+  - It works over WEB SOCKET. It sets up a LISTENER
+
 #### Example Queries/Mutation
 
 - getProductByID
@@ -282,5 +295,17 @@ fragment widgetFragment on Product {
   price,
   description,
   soldout
+}
+```
+
+- Subscription
+  - Once subscription is setup, it listens for any change in subscribed data (`name`, `status`)
+
+```
+subscription {
+    liftStatusChange {
+        name
+        status
+    }
 }
 ```

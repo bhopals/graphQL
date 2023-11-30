@@ -1,0 +1,4 @@
+- GraphQL server with Apollo Server
+  - Init Project - `npm init`
+  - Install `apollo server` - (`npm i graphql apollo-server nodemon`)
+  - Apollo server takes TYPE DEF and RESOLVERS (an option to MOCK resolvers)

@@ -1,0 +1,17 @@
+{
+  "name": "graphql-with-apollo-server",
+  "version": "1.0.0",
+  "description": "- GraphQL server with Apollo Server   - Install `apollo server` - (`npm i graphql apollo-server nodemon`)   - ## Apollo server takes TYPE DEF and RESOLVERS (an option to MOCK resolvers)",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon ."
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "apollo-server": "^3.13.0",
+    "graphql": "^16.8.1",
+    "nodemon": "^3.0.1"
+  }
+}
