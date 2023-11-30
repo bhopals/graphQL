@@ -12,3 +12,7 @@ Graph QL Query and Mutation
 - mongoose
 - sequelize
 - sqlite3
+
+##### Playground
+
+- GraphQL Playground - https://snowtooth.moonhighway.com/
