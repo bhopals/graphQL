@@ -13,6 +13,11 @@ Graph QL Query and Mutation
 - sequelize
 - sqlite3
 
+- Example Popular STACK (To Refer)
+  - Apollo Server Stack
+  - Hasura
+  - Parisma
+
 ##### Playground
 
 - GraphQL Playground - https://snowtooth.moonhighway.com/
