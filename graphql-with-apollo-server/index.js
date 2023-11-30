@@ -1,11 +1,25 @@
 const { ApolloServer, gql } = require("apollo-server");
 
 const typeDefs = gql`
-  scalar Date
+  """
+  Everything you write here will be the documentation
+  """
   type SkiDay {
+    """
+    A Ski Day unique Identifier
+    """
     id: ID!
-    date: Date!
+    """
+    A Ski Day date
+    """
+    date: String!
+    """
+    Location of Ski day
+    """
     mountain: String!
+    """
+    A Ski Day conditions -  POWDER, HEAVY, ICE, THIN
+    """
     conditions: Conditions!
   }
 
@@ -38,6 +52,10 @@ const typeDefs = gql`
     removeDay(id: ID): RemoveDayPayload!
     addDay(input: AddDayInput): SkiDay
   }
+
+  type Subscription {
+    newDay: SkiDay!
+  }
 `;
 
 const mocks = {
@@ -49,6 +67,6 @@ const mocks = {
 };
 const resolvers = {};
 
-const server = new ApolloServer({ typeDefs, mocks });
+const server = new ApolloServer({ typeDefs, mocks: true });
 
 server.listen().then(({ url }) => console.log(`Server Running at ${url}`));

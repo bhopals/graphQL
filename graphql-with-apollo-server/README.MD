@@ -86,3 +86,40 @@ mutation {
   }
 }
 ```
+
+- SUBSCRIPTION
+
+```
+subscription {
+  newDay {
+    date
+  }
+}
+```
+
+- SAMPLE DOCUMENTATION of TYPE DEF
+
+```
+"""
+  Everything you write here will be the documentation
+  """
+  type SkiDay {
+    """
+    A Ski Day unique Identifier
+    """
+    id: ID!
+    """
+    A Ski Day date
+    """
+    date: String!
+    """
+    Location of Ski day
+    """
+    mountain: String!
+    """
+    A Ski Day conditions -  POWDER, HEAVY, ICE, THIN
+    """
+    conditions: Conditions!
+  }
+
+```

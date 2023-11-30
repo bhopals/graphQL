@@ -202,6 +202,12 @@ GraphQL is a query language for APIs and a runtime for fulfilling those queries 
 - Subscription - To subscribe (pub-sub)
   - It works over WEB SOCKET. It sets up a LISTENER
 
+#### Add Documentation
+
+"""
+Everything you write here will be the documentation
+"""
+
 #### Example Queries/Mutation
 
 - getProductByID
