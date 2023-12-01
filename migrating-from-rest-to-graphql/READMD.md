@@ -58,8 +58,7 @@
 
   - GraphQL works best for the following scenarios:
 
-    - Apps for devices such as mobile phones, smartwatches, and IoT devices,
-      where bandwidth usage matters.
+    - Apps for devices such as mobile phones, smartwatches, and IoT devices, where bandwidth usage matters.
     - Applications where nested data needs to be fetched in a single call.
       For example, a blog or social networking platform where posts need to be fetched along with nested comments and commenters details.
     - Composite pattern, where application retrieves data from multiple, different storage APIs
